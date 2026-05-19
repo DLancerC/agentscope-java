@@ -261,6 +261,17 @@ public class Toolkit {
         return toolRegistry.getToolNames();
     }
 
+    /**
+     * Get the MCP client name for a given tool.
+     *
+     * @param toolName the tool name
+     * @return the MCP client name, or null if the tool is not an MCP tool
+     */
+    public String getMcpClientName(String toolName) {
+        RegisteredToolFunction registered = toolRegistry.getRegisteredTool(toolName);
+        return registered != null ? registered.getMcpClientName() : null;
+    }
+
     // ==================== External Tool Support ====================
 
     /**
